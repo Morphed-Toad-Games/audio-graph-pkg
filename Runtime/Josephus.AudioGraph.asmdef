@@ -1,15 +1,10 @@
 {
-    "name": "com.josephus.audiograph.editor",
-    "rootNamespace": "",
+    "name": "Josephus.AudioGraph",
+    "rootNamespace": "Josephus.AudioGraph",
     "references": [
-        "com.josephus.audiograph",
-        "XNode",
-        "XNodeEditor",
-        "XNode.Groups"
+        "XNode"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
