@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Josephus.NodeSystem;
 
 namespace XNode.NodeGroups
 {

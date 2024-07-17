@@ -2,7 +2,7 @@
     "name": "XNode.Groups",
     "rootNamespace": "",
     "references": [
-        "XNode"
+        "NodeSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

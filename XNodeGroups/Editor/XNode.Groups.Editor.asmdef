@@ -2,8 +2,8 @@
     "name": "XNode.Groups.Editor",
     "rootNamespace": "",
     "references": [
-        "XNode",
-        "XNodeEditor",
+        "NodeSystem",
+        "NodeSystem.Editor",
         "XNode.Groups"
     ],
     "includePlatforms": [

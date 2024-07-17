@@ -1,4 +1,4 @@
-using XNode;
+using Josephus.NodeSystem;
 
 namespace Josephus.AudioGraph.Nodes
 {

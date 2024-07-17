@@ -1,5 +1,6 @@
 using Josephus.AudioGraph.Models;
-using XNode;
+using Josephus.NodeSystem;
+using static Josephus.NodeSystem.Node;
 
 namespace Josephus.AudioGraph.Nodes
 {

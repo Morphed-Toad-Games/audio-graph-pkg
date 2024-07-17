@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Josephus.NodeSystem;
+using Josephus.NodeSystem.Editor;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using XNode;
 using XNode.NodeGroups;
 
 namespace XNodeEditor.NodeGroups
@@ -70,7 +71,7 @@ namespace XNodeEditor.NodeGroups
                                             if (p.y > group.position.y + group.height + 30) continue;
                                             if (NodeEditorWindow.current.selectedReroutes.Any(x => x.port == port && x.connectionIndex == i && x.pointIndex == k)) continue;
                                             NodeEditorWindow.current.selectedReroutes.Add(
-                                                new Internal.RerouteReference(port, i, k)
+                                                new Josephus.NodeSystem.Editor.Internal.RerouteReference(port, i, k)
                                             );
                                         }
                                     }

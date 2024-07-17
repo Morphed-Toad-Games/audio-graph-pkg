@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Profiling;
-using XNode;
+using Josephus.NodeSystem;
 
 namespace Josephus.AudioGraph
 {
     [CreateAssetMenu(menuName = "Audio/Graph")]
     public class AudioGraph : NodeGraph
     {
+        public override string Title => $"{name} - Audio Graph";
+
         public float DistanceToListener { get; set; }
 
         public bool IsInstance { get; set; }
