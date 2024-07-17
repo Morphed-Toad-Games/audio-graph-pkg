@@ -1,0 +1,21 @@
+{
+    "name": "com.josephus.audiograph.editor",
+    "rootNamespace": "",
+    "references": [
+        "com.josephus.audiograph",
+        "XNode",
+        "XNodeEditor",
+        "XNode.Groups"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
