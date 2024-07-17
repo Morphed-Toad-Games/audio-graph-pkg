@@ -1,11 +1,8 @@
 {
-    "name": "Josephus.AudioGraph.Editor",
+    "name": "NodeSystem.Editor",
     "rootNamespace": "",
     "references": [
-        "Josephus.AudioGraph",
-        "NodeSystem",
-        "NodeSystem.Editor",
-        "XNode.Groups"
+        "NodeSystem"
     ],
     "includePlatforms": [
         "Editor"

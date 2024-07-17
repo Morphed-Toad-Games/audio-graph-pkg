@@ -2,7 +2,7 @@ using Josephus.AudioGraph.Collections;
 using Josephus.AudioGraph.Models;
 using System;
 using UnityEngine;
-using XNode;
+using Josephus.NodeSystem;
 
 namespace Josephus.AudioGraph.Nodes
 {

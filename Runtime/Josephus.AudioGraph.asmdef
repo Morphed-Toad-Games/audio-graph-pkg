@@ -2,7 +2,7 @@
     "name": "Josephus.AudioGraph",
     "rootNamespace": "Josephus.AudioGraph",
     "references": [
-        "XNode"
+        "NodeSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

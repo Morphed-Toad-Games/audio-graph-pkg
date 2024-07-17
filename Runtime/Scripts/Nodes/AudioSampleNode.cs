@@ -1,7 +1,7 @@
 using Josephus.AudioGraph.Models;
 using Josephus.AudioGraph.ScriptableObjects;
+using Josephus.NodeSystem;
 using UnityEngine;
-using XNode;
 
 namespace Josephus.AudioGraph.Nodes
 {
