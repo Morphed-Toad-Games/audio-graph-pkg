@@ -14,7 +14,7 @@ namespace Josephus.NodeSystem.Editor
         /// <summary> The last editor we checked. This should be the one we modify </summary>
         private static Josephus.NodeSystem.Editor.NodeGraphEditor lastEditor;
         /// <summary> The last key we checked. This should be the one we modify </summary>
-        private static string lastKey = "NodeSystem.Settings";
+        private static string lastKey = "Josephus.NodeSystem.Settings";
 
         private static Dictionary<Type, Color> typeColors = new Dictionary<Type, Color>();
         private static Dictionary<string, Settings> settings = new Dictionary<string, Settings>();
@@ -41,7 +41,7 @@ namespace Josephus.NodeSystem.Editor
             public bool portTooltips = true;
             [SerializeField] private string typeColorsData = "";
             [NonSerialized] public Dictionary<string, Color> typeColors = new Dictionary<string, Color>();
-            [FormerlySerializedAs("noodleType")] public NoodlePath noodlePath = NoodlePath.Curvy;
+            [FormerlySerializedAs("noodleType")] public NoodlePath noodlePath = NoodlePath.ShaderLab;
             public NoodleStroke noodleStroke = NoodleStroke.Full;
 
             private Texture2D _gridTexture;
@@ -99,9 +99,9 @@ namespace Josephus.NodeSystem.Editor
 #if UNITY_2019_1_OR_NEWER
         [SettingsProvider]
         public static SettingsProvider CreateXNodeSettingsProvider() {
-            SettingsProvider provider = new SettingsProvider("Preferences/Node Editor", SettingsScope.User) {
+            SettingsProvider provider = new SettingsProvider("Preferences/Audio Graph Node Editor", SettingsScope.User) {
                 guiHandler = (searchContext) => { NodeSystem.Editor.NodeEditorPreferences.PreferencesGUI(); },
-                keywords = new HashSet<string>(new [] { "xNode", "node", "editor", "graph", "connections", "noodles", "ports" })
+                keywords = new HashSet<string>(new [] { "audio-graph", "node", "editor", "graph", "connections", "noodles", "ports" })
             };
             return provider;
         }
@@ -113,9 +113,6 @@ namespace Josephus.NodeSystem.Editor
         private static void PreferencesGUI() {
             VerifyLoaded();
             Settings settings = NodeEditorPreferences.settings[lastKey];
-
-            if (GUILayout.Button(new GUIContent("Documentation", "https://github.com/Siccity/xNode/wiki"), GUILayout.Width(100))) Application.OpenURL("https://github.com/Siccity/xNode/wiki");
-            EditorGUILayout.Space();
 
             NodeSettingsGUI(lastKey, settings);
             GridSettingsGUI(lastKey, settings);

@@ -188,7 +188,7 @@ namespace Josephus.NodeSystem.Editor
                 NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
                 Color backgroundColor = editor.GetTint();
                 Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
-                DrawPortHandle(rect, backgroundColor, col);
+                DrawPortHandle(rect, backgroundColor, col, port);
 
                 // Register the handle position
                 Vector2 portPos = rect.center;
@@ -248,7 +248,7 @@ namespace Josephus.NodeSystem.Editor
             NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
             Color backgroundColor = editor.GetTint();
             Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
-            DrawPortHandle(rect, backgroundColor, col);
+            DrawPortHandle(rect, backgroundColor, col, port);
 
             // Register the handle position
             Vector2 portPos = rect.center;
@@ -265,7 +265,7 @@ namespace Josephus.NodeSystem.Editor
             if (port.direction == NodeSystem.NodePort.IO.Input)
             {
                 rect = GUILayoutUtility.GetLastRect();
-                rect.position = rect.position - new Vector2(16, 0);
+                rect.position = rect.position - new Vector2(12, 0);
                 // If property is an output, display a text label and put a port handle on the right side
             }
             else if (port.direction == NodeSystem.NodePort.IO.Output)
@@ -279,7 +279,7 @@ namespace Josephus.NodeSystem.Editor
             NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
             Color backgroundColor = editor.GetTint();
             Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
-            DrawPortHandle(rect, backgroundColor, col);
+            DrawPortHandle(rect, backgroundColor, col, port);
 
             // Register the handle position
             Vector2 portPos = rect.center;
@@ -295,13 +295,17 @@ namespace Josephus.NodeSystem.Editor
             GUILayout.EndHorizontal();
         }
 
-        public static void DrawPortHandle(Rect rect, Color backgroundColor, Color typeColor)
+        public static void DrawPortHandle(Rect rect, Color backgroundColor, Color typeColor, NodeSystem.NodePort port)
         {
+            rect.size = new Vector2(12, 12);
+            rect.y += 2;
             Color col = GUI.color;
-            GUI.color = backgroundColor;
-            GUI.DrawTexture(rect, NodeEditorResources.dotOuter);
             GUI.color = typeColor;
-            GUI.DrawTexture(rect, NodeEditorResources.dot);
+            GUI.DrawTexture(rect, NodeEditorResources.dotOuter, ScaleMode.ScaleToFit);
+
+            if(port != null && port.ConnectionCount > 0)
+                GUI.DrawTexture(rect, NodeEditorResources.dot, ScaleMode.ScaleToFit);
+
             GUI.color = col;
         }
 
