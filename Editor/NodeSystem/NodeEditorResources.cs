@@ -30,7 +30,7 @@ namespace Josephus.NodeSystem.Editor
                 inputPort.padding.left = 10;
 
                 nodeHeader = new GUIStyle();
-                nodeHeader.alignment = TextAnchor.MiddleCenter;
+                nodeHeader.alignment = TextAnchor.MiddleLeft;
                 nodeHeader.fontStyle = FontStyle.Bold;
                 nodeHeader.normal.textColor = Color.white;
 

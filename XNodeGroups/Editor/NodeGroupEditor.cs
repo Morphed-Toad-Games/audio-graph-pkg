@@ -26,8 +26,20 @@ namespace XNodeEditor.NodeGroups
                 case EventType.MouseDrag:
                     if (isDragging)
                     {
-                        group.width = Mathf.Max(200, (int)e.mousePosition.x + 16);
-                        group.height = Mathf.Max(100, (int)e.mousePosition.y - 34);
+                        var settings = NodeEditorPreferences.GetSettings();
+                        var snap = !e.control && settings.gridSnap;
+
+                        if (snap)
+                        {
+                            group.width = Mathf.Max(200, (int)(Mathf.Round((e.mousePosition.x + 8) / 16) * 16) + 16);
+                            group.height = Mathf.Max(100, (int)(Mathf.Round((e.mousePosition.y + 8) / 16) * 16) - 34);
+                        }
+                        else
+                        {
+                            group.width = Mathf.Max(200, (int)e.mousePosition.x + 16);
+                            group.height = Mathf.Max(100, (int)e.mousePosition.y - 34);
+                        }
+
                         NodeEditorWindow.current.Repaint();
                     }
                     break;

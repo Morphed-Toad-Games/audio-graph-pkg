@@ -515,7 +515,7 @@ namespace Josephus.NodeSystem.Editor
                     rect.position = new Vector2(rect.position.x - 8, rect.position.y - 8);
                     rect = GridToWindowRect(rect);
 
-                    NodeEditorGUILayout.DrawPortHandle(rect, bgcol, frcol);
+                    NodeEditorGUILayout.DrawPortHandle(rect, bgcol, frcol, null);
                 }
             }
         }

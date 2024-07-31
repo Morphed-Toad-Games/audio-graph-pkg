@@ -13,6 +13,9 @@ namespace Josephus.AudioGraph.Nodes
 
         public override object GetValue(NodePort port)
         {
+            if (Application.isPlaying == false)
+                return $"Random Number ({Min} to {Max})";
+
             Number = Random.Range(Min, Max);
             return Number;
         }
