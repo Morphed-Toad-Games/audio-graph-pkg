@@ -11,6 +11,8 @@ namespace Josephus.AudioGraph.Nodes
     [CreateNodeMenu("Output/Output Node")]
     public class OutputNode : BaseAudioNode
     {
+        [Output(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public OutputNode NodeReference;
+
         public string Description = "";
         public AudioMixerGroup AudioMixerGroup;
         public float Gain = 0;
@@ -18,7 +20,6 @@ namespace Josephus.AudioGraph.Nodes
         [Input(typeConstraint = TypeConstraint.Strict)] public AudioEvent Event;
         [Input(typeConstraint = TypeConstraint.Strict)] public AudioSample Sample;
 
-        [Output(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public OutputNode NodeReference;
 
         public override object GetValue(NodePort port)
         {

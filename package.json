@@ -1,6 +1,6 @@
 {
     "name": "com.josephus.audiograph",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "displayName": "Audio Graph",
     "description": "An audio graph system built upon Unity's existing AudioSource component allowing for complex audio behaviour.",
     "unity": "2019.4",

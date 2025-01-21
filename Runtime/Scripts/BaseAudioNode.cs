@@ -9,7 +9,7 @@ namespace Josephus.AudioGraph
     {
         protected AudioGraph Graph => graph as AudioGraph;
 
-        [field: SerializeField] public SerializableGuid NodeId { get; private set; }
+        [field: SerializeField, HideInInspector] public SerializableGuid NodeId { get; private set; }
 
         public void GenerateGuid()
             => NodeId = new(Guid.NewGuid());
