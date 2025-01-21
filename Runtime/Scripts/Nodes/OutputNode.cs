@@ -3,6 +3,7 @@ using Josephus.AudioGraph.Models;
 using System;
 using UnityEngine;
 using Josephus.NodeSystem;
+using UnityEngine.Audio;
 
 namespace Josephus.AudioGraph.Nodes
 {
@@ -11,10 +12,11 @@ namespace Josephus.AudioGraph.Nodes
     public class OutputNode : BaseAudioNode
     {
         public string Description = "";
+        public AudioMixerGroup AudioMixerGroup;
+        public float Gain = 0;
 
         [Input(typeConstraint = TypeConstraint.Strict)] public AudioEvent Event;
         [Input(typeConstraint = TypeConstraint.Strict)] public AudioSample Sample;
-        public float Gain = 1;
 
         [Output(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public OutputNode NodeReference;
 
@@ -33,11 +35,10 @@ namespace Josephus.AudioGraph.Nodes
         {
             var sample = GetInputValue("Sample", Sample);
 
-            var linearGain = Mathf.Pow(10, Gain / 20);
-
             audioSource.clip = sample.Clip;
-            audioSource.volume = sample.Volume * linearGain;
+            audioSource.volume = sample.Volume + Gain;
             audioSource.pitch = sample.Pitch;
+            audioSource.outputAudioMixerGroup = AudioMixerGroup;
         }
 
         public virtual void OnPlay(SerializableDictionary<SerializableGuid, AudioSource> pool)
