@@ -20,20 +20,16 @@ namespace Josephus.AudioGraph
         public bool IsInstance { get; set; }
 
         [SerializeField, HideInInspector] private SerializableDictionary<SerializableGuid, BaseAudioNode> nodesByGuid = new();
+        private Dictionary<string, ParameterNode> parameterNodes = new();
+        private Dictionary<string, List<NodePort>> eventNodePorts = new();
 
         public IReadOnlyList<OutputNode> GetEventOutputs(string eventName)
         {
             Profiler.BeginSample("GetEventOutputs");
             var list = new List<OutputNode>();
-            var eventNodes = nodes
-                .Where(x => x is EventNode eventNode && eventNode.EventName == eventName);
 
-            if (eventNodes.Any() == false)
+            if(eventNodePorts.TryGetValue(eventName, out var ports) == false)
                 throw new Exception($"Event {eventName} not found in Audio Graph {name}");
-
-            var ports = eventNodes
-                .Select(x => x.GetOutputPort("Event"))
-                .SelectMany(x => x.GetConnections());
 
             foreach (var connections in ports)
             {
@@ -68,11 +64,21 @@ namespace Josephus.AudioGraph
             return node;
         }
 
+        public override void RemoveNode(Node node)
+        {
+            if (node is BaseAudioNode audioNode)
+            {
+                nodesByGuid.Remove(audioNode.NodeId);
+            }
+            base.RemoveNode(node);
+        }
+
         public override NodeGraph Copy()
         {
             // Instantiate a new nodegraph instance
             var graph = Instantiate(this);
             graph.nodesByGuid.Clear();
+            graph.parameterNodes.Clear();
 
             // Instantiate all nodes inside the graph
             for (int i = 0; i < nodes.Count; i++)
@@ -83,12 +89,15 @@ namespace Josephus.AudioGraph
                 Node.graphHotfix = graph;
                 var copiedNode = Instantiate(node);
 
-                if(node is BaseAudioNode audioNode)
+                if (node is BaseAudioNode audioNode)
                 {
                     var copiedAudioNode = copiedNode as BaseAudioNode;
 
                     copiedAudioNode.SetGuid(audioNode.NodeId);
                     graph.nodesByGuid.Add(copiedAudioNode.NodeId, copiedAudioNode);
+
+                    if (copiedAudioNode is ParameterNode paramNode)
+                        graph.parameterNodes.Add(paramNode.Name, paramNode);
                 }
 
                 copiedNode.graph = graph;
@@ -102,6 +111,16 @@ namespace Josephus.AudioGraph
                 foreach (NodePort port in graph.nodes[i].Ports)
                 {
                     port.Redirect(nodes, graph.nodes);
+                }
+
+
+                if (graph.nodes[i] is EventNode eventNode)
+                {
+                    if (graph.eventNodePorts.ContainsKey(eventNode.EventName) == false)
+                        graph.eventNodePorts.Add(eventNode.EventName, new List<NodePort>());
+
+                    var eventNodeOutput = eventNode.GetOutputPort("Event");
+                    graph.eventNodePorts[eventNode.EventName].AddRange(eventNodeOutput.GetConnections());
                 }
             }
 
@@ -118,8 +137,7 @@ namespace Josephus.AudioGraph
 
         public void SetParameter(string name, float value)
         {
-            var parameterNode = nodes.FirstOrDefault(x => x is ParameterNode) as ParameterNode;
-            if (parameterNode == null)
+            if(parameterNodes.TryGetValue(name, out var parameterNode) == false)
             {
                 Debug.LogWarning($"Parameter {name} not found in Audio Graph");
                 return;

@@ -32,7 +32,7 @@ namespace Josephus.AudioGraph
         public static AudioListener GetActiveAudioListener()
         {
             if (cachedAudioListener == null)
-                cachedAudioListener = FindObjectOfType<AudioListener>();
+                cachedAudioListener = FindFirstObjectByType<AudioListener>();
 
             return cachedAudioListener;
         }
@@ -130,15 +130,23 @@ namespace Josephus.AudioGraph
 
             Profiler.BeginSample("Play Outputs");
 
+            Profiler.BeginSample("Update Params");
+
             foreach (var param in GraphInstanceParameters)
             {
                 audioGraphInstance.SetParameter(param.Name, param.Value);
             }
 
+            Profiler.EndSample();
+
+            Profiler.BeginSample("Play Samples");
+
             foreach (var output in samples)
             {
                 output.OnPlay(audioSourcePool);
             }
+
+            Profiler.EndSample();
 
             Profiler.EndSample();
 
