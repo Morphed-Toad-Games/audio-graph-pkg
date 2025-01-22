@@ -36,7 +36,7 @@ namespace Josephus.AudioGraph.Nodes
         {
             var sample = GetInputValue("Sample", Sample);
 
-            audioSource.clip = sample.Clip;
+            audioSource.resource = sample.Clip;
             audioSource.volume = sample.Volume + Gain;
             audioSource.pitch = sample.Pitch;
             audioSource.outputAudioMixerGroup = AudioMixerGroup;

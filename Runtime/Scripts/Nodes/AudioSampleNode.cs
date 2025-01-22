@@ -2,6 +2,7 @@ using Josephus.AudioGraph.Models;
 using Josephus.AudioGraph.ScriptableObjects;
 using Josephus.NodeSystem;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Josephus.AudioGraph.Nodes
 {
@@ -27,7 +28,7 @@ namespace Josephus.AudioGraph.Nodes
                 if (lastGroupIndex > AudioGroup.AudioClips.Length - 1)
                     lastGroupIndex = 0;
 
-                AudioClip clip;
+                AudioResource clip;
                 if (Shuffle)
                     clip = AudioGroup.AudioClips[Random.Range(0, AudioGroup.AudioClips.Length)];
                 else if (AudioGroup.AudioClips.Length > 0)
