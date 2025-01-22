@@ -9,10 +9,9 @@ namespace Josephus.AudioGraph.Nodes
     [CreateNodeMenu("Sampling/Audio Sample")]
     public class AudioSampleNode : BaseAudioNode
     {
-        public AudioGroup AudioGroup;
-
         int lastGroupIndex;
 
+        [Input(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public AudioGroup AudioGroup;
         [Input(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public float Volume = 1;
         [Input(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public float Pitch = 1;
         [Input(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public float Delay = 0;
