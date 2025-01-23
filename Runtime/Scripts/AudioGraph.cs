@@ -135,7 +135,7 @@ namespace Josephus.AudioGraph
             //If we're not an instance, we don't want to do anything on destroy
         }
 
-        public void SetParameter(string name, float value)
+        public void SetParameter(string name, object value)
         {
             if(parameterNodes.TryGetValue(name, out var parameterNode) == false)
             {

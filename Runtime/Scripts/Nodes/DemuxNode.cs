@@ -8,14 +8,14 @@ namespace Josephus.AudioGraph.Nodes
     public class DemuxNode : BaseAudioNode
     {
         [Input(typeConstraint = TypeConstraint.Strict)] public AudioEvent Event;
-        [Input(typeConstraint = TypeConstraint.Strict)] public float Value;
+        [Input(typeConstraint = TypeConstraint.Strict)] public bool Value;
 
         [Output(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public AudioEvent Trigger0;
         [Output(typeConstraint = TypeConstraint.Strict, connectionType = ConnectionType.Override)] public AudioEvent Trigger1;
 
         public NodePort GetTriggerPort()
         {
-            if (Mathf.Approximately(GetInputValue("Value", Value), 1))
+            if (GetInputValue("Value", Value))
                 return GetOutputPort("Trigger1");
 
             return GetOutputPort("Trigger0");

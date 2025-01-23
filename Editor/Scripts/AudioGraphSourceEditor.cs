@@ -1,4 +1,5 @@
 using Josephus.AudioGraph;
+using Josephus.AudioGraph.ScriptableObjects;
 using UnityEditor;
 
 [CustomEditor(typeof(AudioGraphSource))]
@@ -39,7 +40,21 @@ public class AudioGraphSourceEditor : Editor
 
         foreach (var parameter in audioGraphSource.GraphInstanceParameters)
         {
-            parameter.Value = EditorGUILayout.FloatField(parameter.Name, parameter.Value);
+            switch (parameter.Type)
+            {
+                case Josephus.AudioGraph.Nodes.ParameterNodeType.Bool:
+                    parameter.Value = EditorGUILayout.Toggle(parameter.Name, (bool)parameter.Value);
+                    break;
+                case Josephus.AudioGraph.Nodes.ParameterNodeType.Float:
+                    parameter.Value = EditorGUILayout.FloatField(parameter.Name, (float)parameter.Value);
+                    break;
+                case Josephus.AudioGraph.Nodes.ParameterNodeType.Int:
+                    parameter.Value = EditorGUILayout.IntField(parameter.Name, (int)parameter.Value);
+                    break;
+                case Josephus.AudioGraph.Nodes.ParameterNodeType.AudioGroup:
+                    parameter.Value = (AudioGroup)EditorGUILayout.ObjectField(parameter.Name, (AudioGroup)parameter.Value, typeof(AudioGroup), allowSceneObjects: false);
+                    break;
+            }
         }
 
         if (EditorGUI.EndChangeCheck())

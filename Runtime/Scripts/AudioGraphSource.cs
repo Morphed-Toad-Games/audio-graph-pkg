@@ -105,11 +105,15 @@ namespace Josephus.AudioGraph
             GraphInstanceParameters.Clear();
             foreach (var parameter in parameters)
             {
-                var value = oldParams.Any(x => x.Name == parameter.Name)
-                    ? oldParams.First(x => x.Name == parameter.Name).Value
-                    : 0;
+                var oldNode = oldParams.Any(x => x.Name == parameter.Name)
+                    ? oldParams.First(x => x.Name == parameter.Name)
+                    : null;
 
-                var localParam = new AudioGraphParameterPair(parameter.Name, value);
+                var value = oldNode != null && oldNode.Type == parameter.Type
+                    ? oldNode.Value
+                    : null;
+
+                var localParam = new AudioGraphParameterPair(parameter.Name, value, parameter.Type);
                 GraphInstanceParameters.Add(localParam);
             }
         }
