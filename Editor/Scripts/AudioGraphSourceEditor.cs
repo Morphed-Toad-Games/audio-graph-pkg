@@ -9,6 +9,7 @@ public class AudioGraphSourceEditor : Editor
     private void Awake()
     {
         audioGraphSource = (AudioGraphSource)target;
+        audioGraphSource.Apply();
     }
 
     public override void OnInspectorGUI()

@@ -101,14 +101,16 @@ namespace Josephus.AudioGraph
                 .Select(x => (ParameterNode)x)
                 .ToArray();
 
+            var oldParams = GraphInstanceParameters.ToArray();
+            GraphInstanceParameters.Clear();
             foreach (var parameter in parameters)
             {
-                var localParam = GraphInstanceParameters.FirstOrDefault(x => x.Name == parameter.Name);
-                if (localParam == null)
-                {
-                    localParam = new(parameter.Name, parameter.Value);
-                    GraphInstanceParameters.Add(localParam);
-                }
+                var value = oldParams.Any(x => x.Name == parameter.Name)
+                    ? oldParams.First(x => x.Name == parameter.Name).Value
+                    : 0;
+
+                var localParam = new AudioGraphParameterPair(parameter.Name, value);
+                GraphInstanceParameters.Add(localParam);
             }
         }
 
@@ -118,35 +120,32 @@ namespace Josephus.AudioGraph
 
             Profiler.BeginSample("Calculate Distance");
 
-            var distance = Vector3.Distance(audioTransform.position, GetActiveAudioListener().transform.position);
-            audioGraphInstance.DistanceToListener = distance;
+                var distance = Vector3.Distance(audioTransform.position, GetActiveAudioListener().transform.position);
+                audioGraphInstance.DistanceToListener = distance;
+
+            Profiler.EndSample();
+
+            Profiler.BeginSample("Update Params");
+
+                foreach (var param in GraphInstanceParameters)
+                {
+                    audioGraphInstance.SetParameter(param.Name, param.Value);
+                }
 
             Profiler.EndSample();
 
             Profiler.BeginSample("Get Outputs");
-            var samples = audioGraphInstance.GetEventOutputs(eventName);
-            Profiler.EndSample();
 
-
-            Profiler.BeginSample("Play Outputs");
-
-            Profiler.BeginSample("Update Params");
-
-            foreach (var param in GraphInstanceParameters)
-            {
-                audioGraphInstance.SetParameter(param.Name, param.Value);
-            }
+                var samples = audioGraphInstance.GetEventOutputs(eventName);
 
             Profiler.EndSample();
 
             Profiler.BeginSample("Play Samples");
 
-            foreach (var output in samples)
-            {
-                output.OnPlay(audioSourcePool);
-            }
-
-            Profiler.EndSample();
+                foreach (var output in samples)
+                {
+                    output.OnPlay(audioSourcePool);
+                }
 
             Profiler.EndSample();
 
