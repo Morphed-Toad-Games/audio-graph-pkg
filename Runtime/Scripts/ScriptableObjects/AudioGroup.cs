@@ -6,6 +6,8 @@ namespace Josephus.AudioGraph.ScriptableObjects
     [CreateAssetMenu(menuName = "Audio/Group")]
     public class AudioGroup : ScriptableObject
     {
-        public AudioResource[] AudioClips;
+        [SerializeField] private AudioResource[] audioClips;
+
+        public virtual AudioResource[] AudioClips => audioClips;
     }
 }
