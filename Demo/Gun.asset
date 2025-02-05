@@ -1,0 +1,3062 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8445793972230953194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5b55cccb8f3ad4ea910acf1f7ae9a9, type: 3}
+  m_Name: Stop Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: -680}
+  ports:
+    keys:
+    - OutputNodeReference
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: OutputNodeReference
+      _node: {fileID: -8445793972230953194}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: NodeReference
+        node: {fileID: 3692732977801746741}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Event
+      _node: {fileID: -8445793972230953194}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -3595633412890439561}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: -8445793972230953194}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: -8445793972230953194}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 33dd0856-5218-1e40-9a37-0fb37dbca289
+  NodeReference: {fileID: 0}
+  Description: Stop Reflections
+  AudioMixerGroup: {fileID: 0}
+  Gain: 0
+  OutputNodeReference: {fileID: 0}
+--- !u!114 &-8397073728942618621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 1176}
+  ports:
+    keys:
+    - Shuffle
+    - Loop
+    - Delay
+    - Pitch
+    - Volume
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Shuffle
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: 2022576458771034979}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Volume
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn1
+        node: {fileID: 3428516233554783713}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: -8397073728942618621}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 2cf9b62a-16b6-6642-ac14-282230ebe06d
+  AudioGroup: {fileID: 11400000, guid: 8c3df927f9efefd4a81c312e7f6b91f6, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 0
+--- !u!114 &-7629443441519534619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: -568}
+  ports:
+    keys:
+    - Volume
+    - Pitch
+    - Delay
+    - Loop
+    - Shuffle
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Volume
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: 2200359359784259043}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Shuffle
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn2
+        node: {fileID: 4458290954859288631}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: -7629443441519534619}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: f9543e71-473a-c94c-83fa-4a1e849f0c3d
+  AudioGroup: {fileID: 11400000, guid: 0f090452df3678341a873e858e4def24, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 1
+--- !u!114 &-7416588173038295603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 1384}
+  ports:
+    keys:
+    - Volume
+    - Pitch
+    - Delay
+    - Loop
+    - Shuffle
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Volume
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: 1038723738220051623}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Shuffle
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn2
+        node: {fileID: 3428516233554783713}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: -7416588173038295603}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 79a0006b-7acc-6547-b42e-53cc0b20d869
+  AudioGroup: {fileID: 11400000, guid: 46f628ea2e859be4e9bbf0d9e424bd0d, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 0
+--- !u!114 &-6922800976722414153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -56, y: 552}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: -6922800976722414153}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 308897515550223207}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: -6922800976722414153}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut1
+        node: {fileID: 6361143089690237625}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: -6922800976722414153}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: afc80a37-0806-41a6-a597-379499c9cc58
+  NodeReference: {fileID: 0}
+  Description: Play Noise
+  AudioMixerGroup: {fileID: 8672822996855542712, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &-6790258198741745293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5b55cccb8f3ad4ea910acf1f7ae9a9, type: 3}
+  m_Name: Stop Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: -472}
+  ports:
+    keys:
+    - OutputNodeReference
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: OutputNodeReference
+      _node: {fileID: -6790258198741745293}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: NodeReference
+        node: {fileID: -3728581949130735626}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Event
+      _node: {fileID: -6790258198741745293}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -3595633412890439561}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: -6790258198741745293}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: -6790258198741745293}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: a35d3672-5642-234c-88ca-16cbcad077fb
+  NodeReference: {fileID: 0}
+  Description: Stop ReflectionsFar
+  AudioMixerGroup: {fileID: 0}
+  Gain: 0
+  OutputNodeReference: {fileID: 0}
+--- !u!114 &-6723902853434856933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37381d3ccc603084d8d696fff82f3ff2, type: 3}
+  m_Name: Parameter
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -600, y: 152}
+  ports:
+    keys:
+    - Value
+    values:
+    - _fieldName: Value
+      _node: {fileID: -6723902853434856933}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Value
+        node: {fileID: 4336801499544956752}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 43cd51f7-0e83-4cfd-83de-9c6aa76339be
+  <Name>k__BackingField: IsFirstPerson
+  <Type>k__BackingField: 0
+  SerializedValue: False
+  SerializedValueUnity: {fileID: 0}
+--- !u!114 &-4597971412537368279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd3be8959e65b4aa1a3b7354243d88, type: 3}
+  m_Name: Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: -824}
+  ports:
+    keys:
+    - Event
+    values:
+    - _fieldName: Event
+      _node: {fileID: -4597971412537368279}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 3692732977801746741}
+        reroutePoints: []
+      - fieldName: Event
+        node: {fileID: -3728581949130735626}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 1c68dcda-02b1-874d-a62d-e19229e466ca
+  EventName: Fire_Stop
+--- !u!114 &-3728581949130735626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -104, y: -472}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: -3728581949130735626}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -4597971412537368279}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: -3728581949130735626}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut2
+        node: {fileID: 4458290954859288631}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: -3728581949130735626}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputNodeReference
+        node: {fileID: -6790258198741745293}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: a6e392ed-82db-3c46-9b51-b8b140d2fd8a
+  NodeReference: {fileID: 0}
+  Description: Play ReflectionsFar
+  AudioMixerGroup: {fileID: 4728054993715912924, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &-3595633412890439561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd3be8959e65b4aa1a3b7354243d88, type: 3}
+  m_Name: Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -104, y: -568}
+  ports:
+    keys:
+    - Event
+    values:
+    - _fieldName: Event
+      _node: {fileID: -3595633412890439561}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -6790258198741745293}
+        reroutePoints: []
+      - fieldName: Event
+        node: {fileID: -8445793972230953194}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 4b5c185b-05c9-854f-a434-c93f981def48
+  EventName: Fire
+--- !u!114 &-2856583464834282396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -840, y: -72}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: -2856583464834282396}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: -2856583464834282396}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: -2856583464834282396}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: 1007043214846684420}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: b9d1dbee-c71e-9d4a-aea1-53329e5362c4
+  Min: 0.95
+  Max: 1.05
+  Number: 1.0232823
+--- !u!114 &-2490481287542925425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd3be8959e65b4aa1a3b7354243d88, type: 3}
+  m_Name: Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: 1240}
+  ports:
+    keys:
+    - Event
+    values:
+    - _fieldName: Event
+      _node: {fileID: -2490481287542925425}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 8638245512523332515}
+        reroutePoints: []
+      - fieldName: Event
+        node: {fileID: 332123299532554183}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 13d090d6-7cd0-d543-8dbb-6be798f614bb
+  EventName: Fire
+--- !u!114 &-2245643117360702722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -56, y: 840}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: -2245643117360702722}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 308897515550223207}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: -2245643117360702722}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut2
+        node: {fileID: 6361143089690237625}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: -2245643117360702722}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 9d00e729-872e-40ee-a871-d002ed266a95
+  NodeReference: {fileID: 0}
+  Description: Play Noise Distant
+  AudioMixerGroup: {fileID: 8672822996855542712, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &-2104364231162411258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: -776}
+  ports:
+    keys:
+    - Shuffle
+    - Loop
+    - Delay
+    - Pitch
+    - Volume
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Shuffle
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: -711197947317366957}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Volume
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn1
+        node: {fileID: 4458290954859288631}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: -2104364231162411258}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 63364333-1305-a04b-bc79-fc522eba42b9
+  AudioGroup: {fileID: 11400000, guid: ce2d18599ca42174f981d01aec1cb36a, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 1
+--- !u!114 &-945001377153724388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -840, y: 344}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: -945001377153724388}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: -945001377153724388}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: -945001377153724388}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: 4786816234656792247}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 5782ffab-5520-6b48-adda-c00cc44898bb
+  Min: 0.95
+  Max: 1.05
+  Number: 0.97926533
+--- !u!114 &-919997415390507891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 584}
+  ports:
+    keys:
+    - Shuffle
+    - Loop
+    - Delay
+    - Pitch
+    - Volume
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Shuffle
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: 2120895144500969114}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Volume
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn1
+        node: {fileID: 6361143089690237625}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: -919997415390507891}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 7df763b9-ebc8-6143-959b-41520f2f2fbc
+  AudioGroup: {fileID: 11400000, guid: 1475dae82373ef74791c27e8c84e1a4f, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 0
+--- !u!114 &-711197947317366957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -888, y: -696}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: -711197947317366957}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: -711197947317366957}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: -711197947317366957}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: -2104364231162411258}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 581497c9-20cc-5546-a593-b87ec5c5207e
+  Min: 0.95
+  Max: 1.05
+  Number: 0.9510376
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccf90885eedfef478f63e715f307e1e, type: 3}
+  m_Name: Gun
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 6817852276099219772}
+  - {fileID: 7944669265091180112}
+  - {fileID: 9193426720236063347}
+  - {fileID: 906005545580706733}
+  - {fileID: -945001377153724388}
+  - {fileID: 8520500483521401028}
+  - {fileID: -919997415390507891}
+  - {fileID: 4786816234656792247}
+  - {fileID: 1007043214846684420}
+  - {fileID: -4597971412537368279}
+  - {fileID: -2104364231162411258}
+  - {fileID: -8397073728942618621}
+  - {fileID: -711197947317366957}
+  - {fileID: 2120895144500969114}
+  - {fileID: 4336801499544956752}
+  - {fileID: -2856583464834282396}
+  - {fileID: 2022576458771034979}
+  - {fileID: 6368722705435830469}
+  - {fileID: 8638245512523332515}
+  - {fileID: 3692732977801746741}
+  - {fileID: 2099152618910182733}
+  - {fileID: -8445793972230953194}
+  - {fileID: 6863348857378491537}
+  - {fileID: 1038723738220051623}
+  - {fileID: 332123299532554183}
+  - {fileID: 1083394278783543292}
+  - {fileID: -7416588173038295603}
+  - {fileID: 3428516233554783713}
+  - {fileID: 6361143089690237625}
+  - {fileID: 1164966805548012476}
+  - {fileID: 8309614665410748164}
+  - {fileID: -7629443441519534619}
+  - {fileID: 4458290954859288631}
+  - {fileID: 6798527415221439658}
+  - {fileID: -3728581949130735626}
+  - {fileID: -6790258198741745293}
+  - {fileID: -3595633412890439561}
+  - {fileID: 308897515550223207}
+  - {fileID: -2490481287542925425}
+  - {fileID: -6922800976722414153}
+  - {fileID: -2245643117360702722}
+  - {fileID: -6723902853434856933}
+  - {fileID: 2200359359784259043}
+  nodesByGuid:
+    keys:
+    - serializedGuid: 2011e8b3-878d-43aa-b119-ef3edf0d669e
+    - serializedGuid: f8c4a833-ce37-41cf-83bf-cbc87c5057a1
+    - serializedGuid: 787a8120-374b-4a87-b00d-740bc69330d9
+    - serializedGuid: 21df47b0-92da-411a-875f-8f7a3225131b
+    - serializedGuid: da3896fb-5d51-4621-9bce-9e6ca699e74d
+    - serializedGuid: 12de6676-9a36-44b5-aa11-56c12290dd32
+    - serializedGuid: 66eb0334-6647-4eec-8eac-4769d65b170a
+    - serializedGuid: afc80a37-0806-41a6-a597-379499c9cc58
+    - serializedGuid: 9d00e729-872e-40ee-a871-d002ed266a95
+    - serializedGuid: 8df7b1dc-4685-40d1-b637-0f51ae83e6f4
+    - serializedGuid: 238d7d8a-b70e-43eb-a1a4-6115faf5a518
+    - serializedGuid: c74d4241-4055-4d94-aace-7b8db37eb714
+    - serializedGuid: 43cd51f7-0e83-4cfd-83de-9c6aa76339be
+    - serializedGuid: d73e34a5-27aa-4dfc-93b1-8530c9b4bcb9
+    values:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -6922800976722414153}
+    - {fileID: -2245643117360702722}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -6723902853434856933}
+    - {fileID: 2200359359784259043}
+--- !u!114 &308897515550223207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd3be8959e65b4aa1a3b7354243d88, type: 3}
+  m_Name: Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -376, y: 680}
+  ports:
+    keys:
+    - Event
+    values:
+    - _fieldName: Event
+      _node: {fileID: 308897515550223207}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -6922800976722414153}
+        reroutePoints: []
+      - fieldName: Event
+        node: {fileID: -2245643117360702722}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 96db99f3-7c58-3745-9f7e-004240c439f3
+  EventName: Fire
+--- !u!114 &332123299532554183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: 1448}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: 332123299532554183}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -2490481287542925425}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: 332123299532554183}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut2
+        node: {fileID: 3428516233554783713}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: 332123299532554183}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 5fb6b243-552e-7046-a605-081be97a9a82
+  NodeReference: {fileID: 0}
+  Description: PlayDistantNoiseAlt
+  AudioMixerGroup: {fileID: 8672822996855542712, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &906005545580706733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: Node Group
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -904, y: -872}
+  ports:
+    keys: []
+    values: []
+  title: Reflections
+  width: 1344
+  height: 638
+  color: {r: 0.50492173, g: 1, b: 0.48584908, a: 0.1}
+--- !u!114 &1007043214846684420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -600, y: -152}
+  ports:
+    keys:
+    - Shuffle
+    - Loop
+    - Delay
+    - Pitch
+    - Volume
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Shuffle
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: -2856583464834282396}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Volume
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: 6368722705435830469}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: 1007043214846684420}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 626c0e1e-2770-9c45-bd38-f2f1cfa4c906
+  AudioGroup: {fileID: 11400000, guid: a5dd73cbc5165df4d9e785304b9818c8, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 1
+--- !u!114 &1038723738220051623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: 1464}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: 1038723738220051623}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: 1038723738220051623}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: 1038723738220051623}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: -7416588173038295603}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 3bd857b9-407e-cd4d-8811-d3196e216e9b
+  Min: 0.95
+  Max: 1.05
+  Number: 0.9985082
+--- !u!114 &1083394278783543292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 792}
+  ports:
+    keys:
+    - Volume
+    - Pitch
+    - Delay
+    - Loop
+    - Shuffle
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Volume
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: 6863348857378491537}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Shuffle
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleIn2
+        node: {fileID: 6361143089690237625}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: 1083394278783543292}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 5b0562cf-f2bc-094f-8429-26272579f4fc
+  AudioGroup: {fileID: 11400000, guid: d75721e8feef5464fb3c03ae21393e11, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 0
+--- !u!114 &1164966805548012476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42de263c0f8ac24408022d99659573dd, type: 3}
+  m_Name: Get Distance To Listener
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 1000}
+  ports:
+    keys:
+    - Distance
+    values:
+    - _fieldName: Distance
+      _node: {fileID: 1164966805548012476}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: FadeTime
+        node: {fileID: 6361143089690237625}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: d5201dce-16a0-af4a-9bf6-d928504d96ea
+  Distance: 0
+--- !u!114 &2022576458771034979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: 1256}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: 2022576458771034979}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: 2022576458771034979}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: 2022576458771034979}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: -8397073728942618621}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 01f4cc85-6dfd-b744-8ec3-5c1438deabbf
+  Min: 0.95
+  Max: 1.05
+  Number: 1.0283841
+--- !u!114 &2099152618910182733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21106c06b495f824d92a31c3d7cec812, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -56, y: 296}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: 2099152618910182733}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Trigger1
+        node: {fileID: 4336801499544956752}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: 2099152618910182733}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: 4786816234656792247}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: 2099152618910182733}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: a364a24e-1b3d-7047-a8e2-baf6e7b87713
+  NodeReference: {fileID: 0}
+  Description: PlayLFE
+  AudioMixerGroup: {fileID: 636840801866495827, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 1
+--- !u!114 &2120895144500969114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: 664}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: 2120895144500969114}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: 2120895144500969114}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: 2120895144500969114}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: -919997415390507891}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: b657cef8-0361-b64f-b4d7-5476671341c2
+  Min: 0.95
+  Max: 1.05
+  Number: 0.969762
+--- !u!114 &2200359359784259043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -888, y: -488}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: 2200359359784259043}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: 2200359359784259043}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: 2200359359784259043}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: -7629443441519534619}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: d73e34a5-27aa-4dfc-93b1-8530c9b4bcb9
+  Min: 0.95
+  Max: 1.05
+  Number: 0
+--- !u!114 &3428516233554783713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d56c0d255361024f9f745787381c250, type: 3}
+  m_Name: Cross Fade Samples
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: 1352}
+  ports:
+    keys:
+    - AudioSampleIn1
+    - AudioSampleIn2
+    - FadeTime
+    - AudioSampleOut1
+    - AudioSampleOut2
+    values:
+    - _fieldName: AudioSampleIn1
+      _node: {fileID: 3428516233554783713}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: -8397073728942618621}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleIn2
+      _node: {fileID: 3428516233554783713}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: -7416588173038295603}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: FadeTime
+      _node: {fileID: 3428516233554783713}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Distance
+        node: {fileID: 8309614665410748164}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut1
+      _node: {fileID: 3428516233554783713}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: 8638245512523332515}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut2
+      _node: {fileID: 3428516233554783713}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: 332123299532554183}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 74c80490-fce1-4b46-ae3a-eb44e56a12c4
+  FadeBegin: 20
+  FadeEnd: 50
+  FadeTime: 0
+--- !u!114 &3692732977801746741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -104, y: -824}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: 3692732977801746741}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -4597971412537368279}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: 3692732977801746741}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut1
+        node: {fileID: 4458290954859288631}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: 3692732977801746741}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputNodeReference
+        node: {fileID: -8445793972230953194}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 9ee0f86a-577a-ca44-8482-7171429870e4
+  NodeReference: {fileID: 0}
+  Description: Play Reflections
+  AudioMixerGroup: {fileID: 4728054993715912924, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &4336801499544956752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee69ebc0e27b1d4eaf546f678bbc787, type: 3}
+  m_Name: Demux
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: 120}
+  ports:
+    keys:
+    - Event
+    - Value
+    - Trigger0
+    - Trigger1
+    values:
+    - _fieldName: Event
+      _node: {fileID: 4336801499544956752}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 8520500483521401028}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Value
+      _node: {fileID: 4336801499544956752}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Value
+        node: {fileID: -6723902853434856933}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Trigger0
+      _node: {fileID: 4336801499544956752}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Trigger1
+      _node: {fileID: 4336801499544956752}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 2099152618910182733}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 694025bb-c816-c14e-85b4-94029dded1e8
+  Value: 0
+--- !u!114 &4458290954859288631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d56c0d255361024f9f745787381c250, type: 3}
+  m_Name: Cross Fade Samples
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: -552}
+  ports:
+    keys:
+    - AudioSampleIn1
+    - AudioSampleIn2
+    - FadeTime
+    - AudioSampleOut1
+    - AudioSampleOut2
+    values:
+    - _fieldName: AudioSampleIn1
+      _node: {fileID: 4458290954859288631}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: -2104364231162411258}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleIn2
+      _node: {fileID: 4458290954859288631}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: -7629443441519534619}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: FadeTime
+      _node: {fileID: 4458290954859288631}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Distance
+        node: {fileID: 6798527415221439658}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut1
+      _node: {fileID: 4458290954859288631}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: 3692732977801746741}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut2
+      _node: {fileID: 4458290954859288631}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: -3728581949130735626}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 7aff0f15-21ae-e645-ae9c-ab8291b19717
+  FadeBegin: 20
+  FadeEnd: 50
+  FadeTime: 0
+--- !u!114 &4786816234656792247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7356e1154d7bf3040a8d844a07f6ad1d, type: 3}
+  m_Name: Audio Sample
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -600, y: 264}
+  ports:
+    keys:
+    - Shuffle
+    - Loop
+    - Delay
+    - Pitch
+    - Volume
+    - AudioSample
+    - AudioGroup
+    values:
+    - _fieldName: Shuffle
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Loop
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Delay
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Pitch
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Number
+        node: {fileID: -945001377153724388}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Volume
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSample
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: 2099152618910182733}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioGroup
+      _node: {fileID: 4786816234656792247}
+      _typeQualifiedName: Josephus.AudioGraph.ScriptableObjects.AudioGroup, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: d51fe911-ff94-b54c-a2fb-2c2d61a05330
+  AudioGroup: {fileID: 11400000, guid: cb028c775411f7146bf6e44e2f09dc2f, type: 2}
+  Volume: 1
+  Pitch: 1
+  Delay: 0
+  Loop: 0
+  Shuffle: 1
+--- !u!114 &6361143089690237625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d56c0d255361024f9f745787381c250, type: 3}
+  m_Name: Cross Fade Samples
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -376, y: 792}
+  ports:
+    keys:
+    - AudioSampleIn1
+    - AudioSampleIn2
+    - FadeTime
+    - AudioSampleOut1
+    - AudioSampleOut2
+    values:
+    - _fieldName: AudioSampleIn1
+      _node: {fileID: 6361143089690237625}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: -919997415390507891}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleIn2
+      _node: {fileID: 6361143089690237625}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: 1083394278783543292}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: FadeTime
+      _node: {fileID: 6361143089690237625}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Distance
+        node: {fileID: 1164966805548012476}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut1
+      _node: {fileID: 6361143089690237625}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: -6922800976722414153}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: AudioSampleOut2
+      _node: {fileID: 6361143089690237625}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Sample
+        node: {fileID: -2245643117360702722}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 6e82b071-9fb1-b74b-8ebe-660c7ba0ef3f
+  FadeBegin: 20
+  FadeEnd: 50
+  FadeTime: 0
+--- !u!114 &6368722705435830469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -152}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: 6368722705435830469}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 8520500483521401028}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: 6368722705435830469}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSample
+        node: {fileID: 1007043214846684420}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: 6368722705435830469}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: c62d4fe3-2469-b241-af9b-2ae458820cee
+  NodeReference: {fileID: 0}
+  Description: PlayHifi
+  AudioMixerGroup: {fileID: -5766442754573363136, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.08190134
+      outSlope: -0.08190134
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 7.25
+      value: 0.48811662
+      inSlope: -0.06149625
+      outSlope: -0.06149625
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 13.5
+      value: 0.2596373
+      inSlope: -0.030829787
+      outSlope: -0.030829787
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 19.75
+      value: 0.11069828
+      inSlope: -0.02107691
+      outSlope: -0.02107691
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 26
+      value: 0
+      inSlope: -0.017711725
+      outSlope: -0.017711725
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 1
+  MaxDistance: 26
+--- !u!114 &6798527415221439658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42de263c0f8ac24408022d99659573dd, type: 3}
+  m_Name: Get Distance To Listener
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: -360}
+  ports:
+    keys:
+    - Distance
+    values:
+    - _fieldName: Distance
+      _node: {fileID: 6798527415221439658}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: FadeTime
+        node: {fileID: 4458290954859288631}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 1afd0ee8-0f77-8d41-9f28-ffdbd050011c
+  Distance: 0
+--- !u!114 &6817852276099219772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: Node Group
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -904, y: 504}
+  ports:
+    keys: []
+    values: []
+  title: Noise
+  width: 1088
+  height: 574
+  color: {r: 1, g: 0.5424528, b: 0.9601044, a: 0.1}
+--- !u!114 &6863348857378491537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e543d2c58f84945ab7f38fba8b7686, type: 3}
+  m_Name: Random Number Generator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: 872}
+  ports:
+    keys:
+    - Min
+    - Max
+    - Number
+    values:
+    - _fieldName: Min
+      _node: {fileID: 6863348857378491537}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Max
+      _node: {fileID: 6863348857378491537}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Number
+      _node: {fileID: 6863348857378491537}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Pitch
+        node: {fileID: 1083394278783543292}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: f971df8b-0155-e94e-8f32-2ec16c77a20e
+  Min: 0.95
+  Max: 1.05
+  Number: 1.0118666
+--- !u!114 &7944669265091180112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: Node Group
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -904, y: -184}
+  ports:
+    keys: []
+    values: []
+  title: LFE & Hifi
+  width: 1088
+  height: 638
+  color: {r: 0.48584908, g: 0.8188176, b: 1, a: 0.1}
+--- !u!114 &8309614665410748164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42de263c0f8ac24408022d99659573dd, type: 3}
+  m_Name: Get Distance To Listener
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 1592}
+  ports:
+    keys:
+    - Distance
+    values:
+    - _fieldName: Distance
+      _node: {fileID: 8309614665410748164}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: FadeTime
+        node: {fileID: 3428516233554783713}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 02b5576f-4f54-ea40-86c8-bf07095c5cf8
+  Distance: 0
+--- !u!114 &8520500483521401028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd3be8959e65b4aa1a3b7354243d88, type: 3}
+  m_Name: Event
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -600, y: 56}
+  ports:
+    keys:
+    - Event
+    values:
+    - _fieldName: Event
+      _node: {fileID: 8520500483521401028}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: 4336801499544956752}
+        reroutePoints: []
+      - fieldName: Event
+        node: {fileID: 6368722705435830469}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: 967f15d8-5dc2-7248-805d-8e4b33fff437
+  EventName: Fire
+--- !u!114 &8638245512523332515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e25f57bacaeb6439cdc0bff7dfacc1, type: 3}
+  m_Name: Spherical Output
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -72, y: 1176}
+  ports:
+    keys:
+    - Event
+    - Sample
+    - NodeReference
+    values:
+    - _fieldName: Event
+      _node: {fileID: 8638245512523332515}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioEvent, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Event
+        node: {fileID: -2490481287542925425}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Sample
+      _node: {fileID: 8638245512523332515}
+      _typeQualifiedName: Josephus.AudioGraph.Models.AudioSample, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: AudioSampleOut1
+        node: {fileID: 3428516233554783713}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: NodeReference
+      _node: {fileID: 8638245512523332515}
+      _typeQualifiedName: Josephus.AudioGraph.Nodes.OutputNode, Josephus.AudioGraph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  <NodeId>k__BackingField:
+    serializedGuid: bd699401-245c-1848-8544-dd29ede231be
+  NodeReference: {fileID: 0}
+  Description: PlayNoiseAlt
+  AudioMixerGroup: {fileID: 8672822996855542712, guid: addf29502ef426e41b8078a3eaf1fcce, type: 2}
+  Gain: 0
+  FallOffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 30
+      value: 1
+      inSlope: -0.013650224
+      outSlope: -0.013650224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 67.5
+      value: 0.48811662
+      inSlope: -0.010249375
+      outSlope: -0.010249375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 105
+      value: 0.2596373
+      inSlope: -0.0051382985
+      outSlope: -0.0051382985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 142.5
+      value: 0.11069828
+      inSlope: -0.0035128184
+      outSlope: -0.0035128184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: -0.0029519543
+      outSlope: -0.0029519543
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutomaticallyGenerateCurve: 1
+  MinDistance: 30
+  MaxDistance: 180
+--- !u!114 &9193426720236063347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f96cea6ada90b4984cf627badd4634, type: 3}
+  m_Name: Node Group
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -904, y: 1128}
+  ports:
+    keys: []
+    values: []
+  title: Noise Alt
+  width: 1090
+  height: 549
+  color: {r: 1, g: 1, b: 1, a: 0.1}

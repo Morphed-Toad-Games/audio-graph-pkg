@@ -2,23 +2,26 @@ using Josephus.AudioGraph.Nodes;
 using Josephus.NodeSystem.Editor;
 using UnityEditor;
 
-[CustomNodeEditor(typeof(StopOutputNode))]
-public class StopOuputNodeEditor : NodeEditor
+namespace Josephus.AudioGraph.Editor.Nodes
 {
-    StopOutputNode outputNode;
-
-    public override void OnBodyGUI()
+    [CustomNodeEditor(typeof(StopOutputNode))]
+    public class StopOuputNodeEditor : NodeEditor
     {
-        if (outputNode == null)
-            outputNode = (StopOutputNode)target;
+        StopOutputNode outputNode;
 
-        outputNode.Description = EditorGUILayout.TextField("Description", outputNode.Description);
+        public override void OnBodyGUI()
+        {
+            if (outputNode == null)
+                outputNode = (StopOutputNode)target;
 
-        var eventInput = outputNode.GetInputPort("Event");
-        NodeEditorGUILayout.PortField(eventInput);
+            outputNode.Description = EditorGUILayout.TextField("Description", outputNode.Description);
 
-        var stopOutputInput = outputNode.GetInputPort("OutputNodeReference");
-        NodeEditorGUILayout.PortField(stopOutputInput);
+            var eventInput = outputNode.GetInputPort("Event");
+            NodeEditorGUILayout.PortField(eventInput);
 
+            var stopOutputInput = outputNode.GetInputPort("OutputNodeReference");
+            NodeEditorGUILayout.PortField(stopOutputInput);
+
+        }
     }
 }

@@ -1,46 +1,48 @@
-using Josephus.AudioGraph;
 using UnityEngine;
 
-public class AudioSourceVolumeCone : MonoBehaviour
+namespace Josephus.AudioGraph
 {
-    [SerializeField, HideInInspector] float maxAngle = 360;
-    [SerializeField, HideInInspector] float minAngle = 360;
-
-    [SerializeField, HideInInspector] AudioSource audioSource;
-
-    Transform trans;
-
-    private void Start()
+    public class AudioSourceVolumeCone : MonoBehaviour
     {
-        trans = transform;
-    }
+        [SerializeField, HideInInspector] float maxAngle = 360;
+        [SerializeField, HideInInspector] float minAngle = 360;
 
-    public void SetAngles(float minAngle, float maxAngle)
-    {
-        this.minAngle = minAngle;
-        this.maxAngle = maxAngle;
-    }
+        [SerializeField, HideInInspector] AudioSource audioSource;
 
-    public void SetAudioSource(AudioSource audioSource)
-    {
-        this.audioSource = audioSource;
-    }
+        Transform trans;
 
-    private void Update()
-    {
-        audioSource.volume = CalculateConeVolume(trans.position, AudioGraphSource.GetActiveAudioListener().transform.position);
-    }
+        private void Start()
+        {
+            trans = transform;
+        }
 
-    public float CalculateConeVolume(Vector3 sourcePosition, Vector3 listenerPosition)
-    {
-        var targetDirection = listenerPosition - sourcePosition;
-        var angle = Vector3.Angle(targetDirection, trans.forward);
-        if (angle < minAngle)
-            return 1;
+        public void SetAngles(float minAngle, float maxAngle)
+        {
+            this.minAngle = minAngle;
+            this.maxAngle = maxAngle;
+        }
 
-        if (angle > maxAngle)
-            return 0;
+        public void SetAudioSource(AudioSource audioSource)
+        {
+            this.audioSource = audioSource;
+        }
 
-        return Mathf.InverseLerp(maxAngle, minAngle, angle);
+        private void Update()
+        {
+            audioSource.volume = CalculateConeVolume(trans.position, AudioGraphSource.GetActiveAudioListener().transform.position);
+        }
+
+        public float CalculateConeVolume(Vector3 sourcePosition, Vector3 listenerPosition)
+        {
+            var targetDirection = listenerPosition - sourcePosition;
+            var angle = Vector3.Angle(targetDirection, trans.forward);
+            if (angle < minAngle)
+                return 1;
+
+            if (angle > maxAngle)
+                return 0;
+
+            return Mathf.InverseLerp(maxAngle, minAngle, angle);
+        }
     }
 }
